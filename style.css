@@ -1,0 +1,118 @@
+:root {
+  --color: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.todo {
+  width: 1000px;
+  margin: 50px auto;
+  background-color: var(--color);
+}
+.todo_list {
+  width: 35%;
+  height: 70%;
+  border: 2px solid #c9c5c5;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: var(--color);
+  position: relative;
+  padding: 20px;
+}
+
+.todo_text {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #c9c5c5;
+  width: 70%;
+}
+.todo_text::placeholder {
+  color: #ece8e8;
+}
+button {
+  position: absolute;
+  right: 5%;
+  border-radius: 15px;
+  border: 2px solid #ece8e8;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: rgb(247 247 251);
+}
+button:hover {
+  background-color: rgb(242 242 245);
+  transition: 0.2s;
+}
+.task {
+  margin-top: 40px;
+}
+li {
+  border: 1px solid#ece8e8;
+  list-style: none;
+  margin-top: 10px;
+  background-color: rgb(247 247 251);
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s;
+}
+li:hover {
+  box-shadow: 0px 1px 2px 0px #dec4c4;
+  transition: 0.2s;
+}
+label {
+  cursor: pointer;
+  text-align: center;
+}
+.checkbox {
+  display: none;
+}
+.check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid#ece8e8;
+  position: relative;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.check::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: 0.2s;
+  background-image: url('img/check.svg');
+  background-size: 20px 20px;
+}
+.checkbox:checked + .check::before {
+  opacity: 1;
+  cursor: pointer;
+}
+.text {
+  position: relative;
+  top: -5px;
+}
+.delete {
+  position: absolute;
+  right: 7%;
+  background: url(/img/delete.svg) no-repeat;
+  background-size: 13px 13px;
+  width: 23px;
+  height: 23px;
+  background-position: center;
+  transition: 0.3s;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.delete:hover {
+  border: 2px solid #c9c5c5;
+  background-color: #ece8e8;
+  transition: 0.3s;
+}
